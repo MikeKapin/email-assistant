@@ -33,8 +33,8 @@ cp .env.example .env.local
 
 Edit `.env.local` and add your API key:
 ```env
-AI_PROVIDER=openai
-OPENAI_API_KEY=your_openai_api_key_here
+AI_PROVIDER=anthropic
+ANTHROPIC_API_KEY=your_claude_api_key_here
 ```
 
 ### 4. Run Locally
@@ -52,8 +52,8 @@ Visit `http://localhost:3000` to see your app running!
 3. Click "New Project" and import your GitHub repo
 4. Vercel will auto-detect it's a Next.js app
 5. Add environment variables in Vercel dashboard:
-   - `AI_PROVIDER`: `openai`
-   - `OPENAI_API_KEY`: `your_api_key_here`
+   - `AI_PROVIDER`: `anthropic`
+   - `ANTHROPIC_API_KEY`: `your_claude_api_key_here`
 6. Click "Deploy"
 
 ### Method 2: Vercel CLI
@@ -65,13 +65,13 @@ vercel --prod
 
 ## AI Provider Setup
 
-### OpenAI (Recommended)
-1. Go to [OpenAI API](https://platform.openai.com/api-keys)
+### Anthropic Claude (Recommended)
+1. Go to [Anthropic Console](https://console.anthropic.com/)
 2. Create a new API key
 3. Set environment variables:
    ```env
-   AI_PROVIDER=openai
-   OPENAI_API_KEY=sk-your-key-here
+   AI_PROVIDER=anthropic
+   ANTHROPIC_API_KEY=sk-ant-api-your-key-here
    ```
 
 ### Anthropic (Claude)
