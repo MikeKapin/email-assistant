@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import Script from 'next/script';
 import { Mail, Send, Copy, CheckCircle, Sparkles, MessageCircle, User, Clock } from 'lucide-react';
 
 export default function EmailAssistant() {
@@ -253,11 +252,6 @@ export default function EmailAssistant() {
           </div>
         </div>
       </div>
-
-      <Script 
-        src="https://cdn.tailwindcss.com" 
-        strategy="beforeInteractive"
-      />
     </>
   );
 }
