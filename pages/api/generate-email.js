@@ -12,7 +12,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    const aiProvider = process.env.AI_PROVIDER || 'openai';
+    const aiProvider = process.env.AI_PROVIDER || 'anthropic';
+    console.log('AI Provider:', aiProvider);
+    console.log('Environment variables available:', {
+      AI_PROVIDER: !!process.env.AI_PROVIDER,
+      ANTHROPIC_API_KEY: !!process.env.ANTHROPIC_API_KEY,
+      OPENAI_API_KEY: !!process.env.OPENAI_API_KEY
+    });
+    
     let generatedEmail = '';
 
     if (aiProvider === 'openai') {
@@ -27,8 +34,12 @@ export default async function handler(req, res) {
 
     res.status(200).json({ email: generatedEmail });
   } catch (error) {
-    console.error('API Error:', error);
-    res.status(500).json({ error: 'Failed to generate email' });
+    console.error('API Error details:', error.message);
+    console.error('Full error:', error);
+    res.status(500).json({ 
+      error: 'Failed to generate email',
+      details: error.message 
+    });
   }
 }
 
